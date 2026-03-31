@@ -145,3 +145,13 @@ table thead th {
 th, td { padding: 12px; text-align: left; }
 thead, tfoot, tr:nth-child(even) { background: var(--nord1); }
 tr { border-bottom: 1px solid var(--nord2); }
+
+/* mobile */
+@media (max-width: 768px) {
+  body {
+    max-width: 100%;
+  }
+  img, iframe, video { 
+    max-width: 95%;
+  }
+}
