@@ -1,0 +1,23 @@
+{{ partial "header.html" . }}
+<div class="article-meta">
+<h1><span class="title">{{ .Title | markdownify }}</span></h1>
+{{ with .Params.author }}<h2 class="author">{{ . }}</h2>{{ end }}
+{{ if (gt .Params.date 0) }}<h2 class="date">{{ .Date.Format "2006-01-02" }}</h2>{{ end }}
+{{ with .Params.tags }}
+<p class="terms">Tags: {{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ "tags/" | relURL }}{{ $t | urlize }}">{{ $t }}</a>{{ end }}</p>
+{{ end }}
+</div>
+
+{{ if .Params.toc }}
+<div id="TableOfContents-wrapper">
+{{ .TableOfContents }}
+</div>
+{{ end }}
+
+<main>
+{{ .Content }}
+</main>
+
+{{ partial "giscus.html" . }}
+
+{{ partial "footer.html" . }}

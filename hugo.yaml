@@ -1,0 +1,52 @@
+baseurl: "/"
+languageCode: "vi-vn"
+title: "t1dk's Bits & Bytes"
+theme: "hugo-xmin"
+footnotereturnlinkcontents: "↩"
+
+permalinks:
+  note: "/note/:year/:month/:day/:contentbasename/"
+  post: "/post/:year/:month/:day/:contentbasename/"
+
+menu:
+  main:
+    - name: Home
+      url: ""
+      weight: 1
+    - name: About
+      url: "about/"
+      weight: 2
+    - name: Tags
+      url: "tags/"
+      weight: 3
+    - name: RSS Feed
+      url: "index.xml"
+
+params:
+  description: "Bits & Bytes, chủ yếu về Công Nghệ Thông Tin."
+  footer: "&copy; [th1nhhdk](https://th1nhhdk.github.io/blog/) 2026 -- {Year} | [Github](https://github.com/th1nhhdk)"
+  giscus:
+    repo: "th1nhhdk/blog"
+    repoId: "R_kgDOMdX2iQ"
+    category: "Announcements"
+    categoryId: "DIC_kwDOMdX2ic4C5rqZ"
+    theme: "dark"
+
+markup:
+  highlight:
+    codeFences: false
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+          - - \[
+            - \]
+          - - $$
+            - $$
+          inline:
+          - - \(
+            - \)
